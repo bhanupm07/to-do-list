@@ -13,6 +13,9 @@ input.addEventListener("keyup", function (event) {
       input.value = "";
       show_list();
     }
+    if (arr.length > 1) {
+      deleteAll.style.display = "block";
+    }
     // console.log(arr);
   }
 });
@@ -39,10 +42,14 @@ container.addEventListener("click", function (e) {
       //   console.log(arr);
       show_list();
     }
+    if (arr.length < 1) {
+      deleteAll.style.display = "none";
+    }
   }
 });
 
 deleteAll.addEventListener("click", function () {
   container.textContent = "";
   arr = [];
+  deleteAll.style.display = "none";
 });
